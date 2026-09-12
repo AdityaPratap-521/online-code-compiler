@@ -1,0 +1,191 @@
+:root {
+  --bg-dark: #0D1117;
+  --panel-bg: #161B22;
+  --border-color: #30363D;
+  --accent-blue: #58A6FF;
+  --accent-green: #3FB950;
+  --accent-pink: #F778BA;
+  --accent-yellow: #D29922;
+  --accent-red: #F85149;
+  --text-main: #C9D1D9;
+  --font-mono: 'Fira Code', monospace;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glass Panels */
+.ide-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.ide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ide-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .ide-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.editor-card, .output-card {
+  background: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lang-select {
+  background: #0D1117;
+  color: #58A6FF;
+  border: 1px solid #30363D;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.code-textarea, .input-textarea {
+  width: 100%;
+  background: #090D13;
+  color: #E6EDE3;
+  border: 1px solid #30363D;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.code-textarea:focus, .input-textarea:focus {
+  border-color: #58A6FF;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+.btn-run {
+  background: linear-gradient(135deg, #238636 0%, #2EA043 100%);
+  color: white;
+  border: none;
+  padding: 0.65rem 1.5rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-run:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2EA043 0%, #3FB950 100%);
+  box-shadow: 0 0 15px rgba(46, 160, 67, 0.4);
+}
+
+.btn-run:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-queued {
+  background: rgba(210, 153, 34, 0.15);
+  color: #D29922;
+  border: 1px solid rgba(210, 153, 34, 0.4);
+}
+
+.status-running {
+  background: rgba(88, 166, 255, 0.15);
+  color: #58A6FF;
+  border: 1px solid rgba(88, 166, 255, 0.4);
+}
+
+.status-success {
+  background: rgba(63, 185, 80, 0.15);
+  color: #3FB950;
+  border: 1px solid rgba(63, 185, 80, 0.4);
+}
+
+.status-error {
+  background: rgba(248, 81, 73, 0.15);
+  color: #F85149;
+  border: 1px solid rgba(248, 81, 73, 0.4);
+}
+
+.terminal-box {
+  background: #090D13;
+  border: 1px solid #30363D;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  min-height: 180px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.github-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #21262D;
+  border: 1px solid #30363D;
+  border-radius: 0.6rem;
+  color: #58A6FF;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.github-badge:hover {
+  background: #30363D;
+  color: #79C0FF;
+}
